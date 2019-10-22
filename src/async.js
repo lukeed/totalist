@@ -1,14 +1,15 @@
-const { join } = require('path');
-const { readdir, stat } = require('fs');
-const { promisify } = require('util');
+import { join, resolve } from 'path';
+import { readdir, stat } from 'fs';
+import { promisify } from 'util';
 
 const toStats = promisify(stat);
 const toRead = promisify(readdir);
 
 export default async function list(dir, callback, pre='') {
-	let abs, stats;
+	dir = resolve('.', dir);
 	let arr = await toRead(dir);
-	for (let str of arr) {
+	let str, abs, stats;
+	for (str of arr) {
 		abs = join(dir, str);
 		stats = await toStats(abs);
 		await (

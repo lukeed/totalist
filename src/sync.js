@@ -1,9 +1,10 @@
-const { join } = require('path');
-const { readdirSync, statSync } = require('fs');
+import { join, resolve } from 'path';
+import { readdirSync, statSync } from 'fs';
 
 export default function list(dir, callback, pre='') {
-	let i=0, abs, stats;
+	dir = resolve('.', dir);
 	let arr = readdirSync(dir);
+	let i=0, abs, stats;
 	for (; i < arr.length; i++) {
 		abs = join(dir, arr[i]);
 		stats = statSync(abs);
