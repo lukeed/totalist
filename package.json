@@ -1,6 +1,6 @@
 {
   "name": "totalist",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "repository": "lukeed/totalist",
   "description": "A tiny (195B to 211B) utility to recursively list all (total) files in a directory",
   "module": "dist/index.mjs",
