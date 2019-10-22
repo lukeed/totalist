@@ -29,7 +29,6 @@
   ],
   "scripts": {
     "build": "node bin",
-    "pretest": "npm run build",
     "test": "tape -r esm test/*.js | tap-spec"
   },
   "devDependencies": {

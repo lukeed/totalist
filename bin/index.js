@@ -29,7 +29,6 @@ async function mode(name, toMove) {
 	);
 
 	if (toMove) {
-		// await mkdir(name);
 		await mv('dist', name);
 	}
 }
