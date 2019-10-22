@@ -54,12 +54,15 @@ totalist('src', (name, abs, stats) => {
   if (/\.js$/.test(name)) {
     scripts.add(abs);
     if (stats.size >= 100e3) {
-      console.warn(`[WARN] "${name}" might cause performance issues (${stats.size})`;)
+      console.warn(`[WARN] "${name}" might cause performance issues (${stats.size})`);
     }
   } else if (/\.css$/.test(name)) {
     styles.add(abs);
   }
 });
+
+console.log([...scripts]);
+//=> [..., '/Users/lukeed/.../src/path/to/example.css', ...]
 ```
 
 
