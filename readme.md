@@ -4,7 +4,7 @@
 
 Traverse a directory recursively, running a function for **every file** found.
 
-With this module, you easily apply custom logic to decide which file(s) to process without worrying about accidentally accessing a directory or repeat `fs.Stats` requests.
+With this module, you easily apply custom logic to decide which file(s) to process without worrying about accidentally accessing a directory or making repeat `fs.Stats` requests.
 
 ## Install
 
@@ -15,7 +15,7 @@ $ npm install --save totalist
 
 ## Modes
 
-There are two "versions" of `totalist`:
+There are two "versions" of `totalist` available:
 
 #### "async"
 > **Node.js:** >= 8.x<br>
@@ -51,14 +51,14 @@ const styles = new Set();
 const scripts = new Set();
 
 totalist('src', (name, abs, stats) => {
-	if (/\.js$/.test(name)) {
-		scripts.add(abs);
-		if (stats.size >= 100e3) {
-			console.warn(`[WARN] "${name}" might cause performance issues (${stats.size})`;)
-		}
-	} else if (/\.css$/.test(name)) {
+  if (/\.js$/.test(name)) {
+    scripts.add(abs);
+    if (stats.size >= 100e3) {
+      console.warn(`[WARN] "${name}" might cause performance issues (${stats.size})`;)
+    }
+  } else if (/\.css$/.test(name)) {
 		styles.add(abs);
-	}
+  }
 });
 ```
 
