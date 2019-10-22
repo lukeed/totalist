@@ -1,12 +1,13 @@
 const { join } = require('path');
 const { promisify } = require('util');
 const { execFile } = require('child_process');
-const { readFile, writeFile } = require('fs');
+const { readFile, writeFile, rename } = require('fs');
 const premove = require('premove');
 
 const run = promisify(execFile);
 const write = promisify(writeFile);
 const read = promisify(readFile);
+const mv = promisify(rename);
 
 const bundt = require.resolve('bundt');
 
@@ -15,7 +16,9 @@ function capitalize(str) {
 }
 
 async function mode(name, toMove) {
-	let { stdout } = await run(bundt, [`src/${name}.js`]);
+	let { stdout } = await run(bundt, [
+		join('src', `${name}.js`)
+	]);
 
 	let diff = 8 - name.length;
 	let spacer1 = ' '.repeat(diff < 0 ? 0 : diff);
@@ -25,7 +28,10 @@ async function mode(name, toMove) {
 		stdout.replace('Filename' + spacer2, capitalize(name) + spacer1)
 	);
 
-	if (toMove) await run('mv', ['dist', name]);
+	if (toMove) {
+		// await mkdir(name);
+		await mv('dist', name);
+	}
 }
 
 (async function () {
