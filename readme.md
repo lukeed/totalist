@@ -57,7 +57,7 @@ totalist('src', (name, abs, stats) => {
       console.warn(`[WARN] "${name}" might cause performance issues (${stats.size})`;)
     }
   } else if (/\.css$/.test(name)) {
-		styles.add(abs);
+    styles.add(abs);
   }
 });
 ```
