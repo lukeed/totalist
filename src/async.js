@@ -7,15 +7,16 @@ const toRead = promisify(readdir);
 
 export default async function list(dir, callback, pre='') {
 	dir = resolve('.', dir);
-	let arr = await toRead(dir);
-	let str, abs, stats;
-	for (str of arr) {
-		abs = join(dir, str);
-		stats = await toStats(abs);
-		await (
-			stats.isDirectory()
-			? list(abs, callback, join(pre, str))
-			: callback(join(pre, str), abs, stats)
+	await toRead(dir).then(arr => {
+		return Promise.all(
+			arr.map(str => {
+				let abs = join(dir, str);
+				return toStats(abs).then(stats => {
+					return stats.isDirectory()
+						? list(abs, callback, join(pre, str))
+						: callback(join(pre, str), abs, stats)
+				});
+			})
 		);
-	}
+	});
 }

@@ -28,8 +28,8 @@ test('(async) usage :: relative', async t => {
 
 	t.is(count, 6, 'saw 6 files total');
 
-	t.same(scripts, ['aaa/index.js', 'bbb/ccc/index.js', 'bbb/index.js'].map(normalize), 'script `name` values are expected');
-	t.same(styles, ['aaa/index.css', 'bbb/ccc/index.css', 'bbb/index.css'].map(normalize), 'style `name` values are expected');
+	t.same(scripts.sort(), ['aaa/index.js', 'bbb/ccc/index.js', 'bbb/index.js'].map(normalize).sort(), 'script `name` values are expected');
+	t.same(styles.sort(), ['aaa/index.css', 'bbb/ccc/index.css', 'bbb/index.css'].map(normalize).sort(), 'style `name` values are expected');
 });
 
 
@@ -51,6 +51,6 @@ test('(async) usage :: absolute', async t => {
 
 	t.is(count, 6, 'saw 6 files total');
 
-	t.same(scripts, ['aaa/index.js', 'bbb/ccc/index.js', 'bbb/index.js'].map(normalize), 'script `name` values are expected');
-	t.same(styles, ['aaa/index.css', 'bbb/ccc/index.css', 'bbb/index.css'].map(normalize), 'style `name` values are expected');
+	t.same(scripts.sort(), ['aaa/index.js', 'bbb/ccc/index.js', 'bbb/index.js'].map(normalize).sort(), 'script `name` values are expected');
+	t.same(styles.sort(), ['aaa/index.css', 'bbb/ccc/index.css', 'bbb/index.css'].map(normalize).sort(), 'style `name` values are expected');
 });

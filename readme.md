@@ -1,6 +1,6 @@
 # totalist [![build status](https://badgen.now.sh/github/status/lukeed/totalist)](https://github.com/lukeed/totalist/actions) [![codecov](https://badgen.now.sh/codecov/c/github/lukeed/totalist)](https://codecov.io/gh/lukeed/totalist)
 
-> A tiny (195B to 211B) utility to recursively list all (total) files in a directory
+> A tiny (195B to 224B) utility to recursively list all (total) files in a directory
 
 Traverse a directory recursively, running a function for **every file** found.
 
@@ -19,7 +19,7 @@ There are two "versions" of `totalist` available:
 
 #### "async"
 > **Node.js:** >= 8.x<br>
-> **Size (gzip):** 211 bytes<br>
+> **Size (gzip):** 224 bytes<br>
 > **Availability:** [CommonJS](https://unpkg.com/totalist/dist/index.js), [ES Module](https://unpkg.com/totalist/dist/index.mjs)
 
 This is the primary/default mode. It makes use of `async`/`await` and [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original).
