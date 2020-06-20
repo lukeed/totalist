@@ -29,13 +29,12 @@
   ],
   "scripts": {
     "build": "node bin",
-    "test": "tape -r esm test/*.js | tap-spec"
+    "test": "uvu -r esm test -i fixtures"
   },
   "devDependencies": {
     "bundt": "1.0.1",
     "esm": "3.2.25",
     "premove": "1.0.0",
-    "tap-spec": "5.0.0",
-    "tape": "4.11.0"
+    "uvu": "0.0.13"
   }
 }
