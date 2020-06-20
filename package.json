@@ -8,7 +8,7 @@
   "types": "index.d.ts",
   "license": "MIT",
   "files": [
-    "*.d.ts",
+    "index.d.ts",
     "dist",
     "sync"
   ],
@@ -28,8 +28,13 @@
     "tree"
   ],
   "scripts": {
-    "build": "node bin",
+    "build": "bundt",
+    "postbuild": "cp sync.d.ts sync/index.d.ts",
     "test": "uvu -r esm test -i fixtures"
+  },
+  "modes": {
+    "sync": "src/sync.js",
+    "default": "src/async.js"
   },
   "devDependencies": {
     "bundt": "1.0.1",
