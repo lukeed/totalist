@@ -39,7 +39,6 @@
   "devDependencies": {
     "bundt": "1.0.1",
     "esm": "3.2.25",
-    "premove": "2.0.0",
     "uvu": "0.3.3"
   }
 }
