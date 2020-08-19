@@ -5,7 +5,7 @@ import { promisify } from 'util';
 const toStats = promisify(stat);
 const toRead = promisify(readdir);
 
-export default async function list(dir, callback, pre='') {
+export async function totalist(dir, callback, pre='') {
 	dir = resolve('.', dir);
 	await toRead(dir).then(arr => {
 		return Promise.all(
@@ -13,7 +13,7 @@ export default async function list(dir, callback, pre='') {
 				let abs = join(dir, str);
 				return toStats(abs).then(stats => {
 					return stats.isDirectory()
-						? list(abs, callback, join(pre, str))
+						? totalist(abs, callback, join(pre, str))
 						: callback(join(pre, str), abs, stats)
 				});
 			})

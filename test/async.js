@@ -1,7 +1,7 @@
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 import { join, normalize } from 'path';
-import totalist from '../src/async';
+import { totalist } from '../src/async';
 
 const fixtures = join(__dirname, 'fixtures');
 

@@ -38,14 +38,14 @@ This is the opt-in mode, ideal for scenarios where `async` usage cannot be suppo
 
 ```js
 // import via npm module
-import totalist from 'totalist';
-import totalist from 'totalist/sync';
+import { totalist } from 'totalist';
+import { totalist } from 'totalist/sync';
 ```
 
 ***Example Usage***
 
 ```js
-import totalist from 'totalist/sync';
+import { totalist } from 'totalist/sync';
 
 const styles = new Set();
 const scripts = new Set();
