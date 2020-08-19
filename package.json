@@ -29,7 +29,6 @@
   ],
   "scripts": {
     "build": "bundt",
-    "postbuild": "cp sync.d.ts sync/index.d.ts",
     "test": "uvu -r esm test -i fixtures"
   },
   "modes": {
@@ -37,7 +36,7 @@
     "default": "src/async.js"
   },
   "devDependencies": {
-    "bundt": "1.0.1",
+    "bundt": "1.1.1",
     "esm": "3.2.25",
     "uvu": "0.3.3"
   }
