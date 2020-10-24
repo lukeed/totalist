@@ -18,7 +18,7 @@ export async function totalist(dir, callback, prefix, cache) {
 				let abs = join(dir, str);
 				return toStats(abs).then(stats => {
 					return stats.isDirectory()
-						? totalist(abs, callback, join(prefix || '', str))
+						? totalist(abs, callback, join(prefix || '', str), cache)
 						: callback(join(prefix || '', str), abs, stats)
 				});
 			})
