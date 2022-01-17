@@ -8,14 +8,12 @@
   "types": "index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
       "import": "./dist/index.mjs",
-      "default": "./dist/index.js"
+      "require": "./dist/index.js"
     },
     "./sync": {
-      "require": "./sync/index.js",
       "import": "./sync/index.mjs",
-      "default": "./sync/index.js"
+      "require": "./sync/index.js"
     }
   },
   "license": "MIT",
