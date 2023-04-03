@@ -8,10 +8,12 @@
   "types": "index.d.ts",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
     "./sync": {
+      "types": "./sync/index.d.ts",
       "import": "./sync/index.mjs",
       "require": "./sync/index.js"
     }
